@@ -6,7 +6,15 @@ module.exports = class Load {
     }
 
     async loadAllQuiz() {
-
+        try {
+            const result = await this.conn.search(`select * from quiz`);
+            if (result[0])
+                return result;
+            else
+                return false;
+        } catch (error) {
+            return false;
+        }
     }
 
     async loadQuiz(title) {
