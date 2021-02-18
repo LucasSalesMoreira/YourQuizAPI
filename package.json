@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node src/server.js"
+    "test": "node src/server.js",
+    "start": "node src/server.js"
   },
   "author": "Lucas Sales Moreira Cordeiro",
   "license": "ISC",
