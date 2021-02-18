@@ -5,11 +5,11 @@ module.exports = class ConnectionDB {
     }
 
     initConnection() {
-        const host_db = process.env.host_db || 'localhost';
-        const port_db = process.env.port_db || 3306;
-        const user_db = process.env.user_db || 'root';
-        const pass_db = process.env.pass_db || null;
-        const db = process.env.name_db || 'db_yourquiz';
+        const host_db = process.env.host_db_2 || 'localhost';
+        const port_db = process.env.port_db_2 || 3306;
+        const user_db = process.env.user_db_2 || 'root';
+        const pass_db = process.env.pass_db_2 || null;
+        const db = process.env.name_db_2 || 'db_yourquiz';
         return this.mysql.createConnection({
             host: host_db,
             port: port_db,
