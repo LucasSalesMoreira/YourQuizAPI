@@ -1,8 +1,12 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 const quizRoutes = require('./routes/quiz');
 const userRoutes = require('./routes/user'); 
 
+app.use(bodyParser.json());
+app.use(bodyParser.raw());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/quiz', quizRoutes);
 app.use('/user', userRoutes);
 
