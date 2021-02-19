@@ -1,4 +1,4 @@
-module.exports = class Load {
+module.exports = class Loader {
     constructor() {
         const path = require('path');
         const Connection = require(path.resolve('src/controller/connection_db/Connection.js'));
