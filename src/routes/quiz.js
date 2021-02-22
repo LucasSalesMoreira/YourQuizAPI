@@ -25,6 +25,7 @@ router.get('/view/:title', async (req, res) => {
 router.post('/new_quiz/:quizObject', async (req, res) => {
     const quiz  = req.body.quiz;
     console.log(quiz);
+    //TESTE
     res.json({  ok: true });
 });
 
