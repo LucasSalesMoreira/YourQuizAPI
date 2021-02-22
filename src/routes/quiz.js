@@ -25,8 +25,45 @@ router.get('/view/:title', async (req, res) => {
 router.post('/new_quiz/:quizObject', async (req, res) => {
     const quiz  = req.body.quiz;
     console.log(quiz);
-    //TESTE
-    res.json({  ok: true });
+    
+    /*
+     *  JSON Object esperado:
+     *  
+     *  {
+     *      'author': 'xxxxxx',
+     *      'title': 'xxxxxxx',
+     *      'questions': [{
+     *                      'ask': 'xxxxx xxx xxxx?',
+     *                      'a': 'xxxxxxxxxxxxx',
+     *                      'b': 'xxxxxxxxxxxxx',
+     *                      'c': 'xxxxxxxxxxxxx',
+     *                      'right': 'b',                   
+     *                   },
+     *                   {
+     *                      'ask': 'xxxxx xxx xxxx?',
+     *                      'a': 'xxxxxxxxxxxxx',
+     *                      'b': 'xxxxxxxxxxxxx',
+     *                      'c': 'xxxxxxxxxxxxx',
+     *                      'right': 'a',                   
+     *                   },
+     *                   {
+     *                      'ask': 'xxxxx xxx xxxx?',
+     *                      'a': 'xxxxxxxxxxxxx',
+     *                      'b': 'xxxxxxxxxxxxx',
+     *                      'c': 'xxxxxxxxxxxxx',
+     *                      'right': 'c',                   
+     *                   }]
+     *  }
+     *   
+    */
+
+    const CreateRegister = require(path.resolve('src/controller/logic/CreateRegister.js'));
+    const result = await new CreateRegister().createQuiz(quiz);
+    
+    if  (result)
+        res.json({ ok: true });
+    else
+        res.json({ ok: false });
 });
 
 module.exports = router;
