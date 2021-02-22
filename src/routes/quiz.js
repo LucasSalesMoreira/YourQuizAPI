@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const path = require('path');
 
+// OK
 router.get('/', async (req, res) => {
     const Loader = require(path.resolve('src/controller/logic/Loader.js'));
     const data = await new Loader().loadAllQuiz();
@@ -10,6 +11,7 @@ router.get('/', async (req, res) => {
         res.json({ ok: false });
 });
 
+// OK
 router.get('/view/:title', async (req, res) => {
     const Loader = require(path.resolve('src/controller/logic/Loader.js'));
     const data = await new Loader().loadQuiz(req.params.title);
@@ -19,8 +21,11 @@ router.get('/view/:title', async (req, res) => {
         res.json({ ok: false });
 });
 
-router.get('/new_quiz/:quizObject', async (req, res) => {
-    res.json(req.params.quizObject);
+// PENDENTE
+router.post('/new_quiz/:quizObject', async (req, res) => {
+    const quiz  = req.body.quiz;
+    console.log(quiz);
+    res.json({  ok: true });
 });
 
 module.exports = router;

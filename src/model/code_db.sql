@@ -18,6 +18,15 @@ create table question(
     foreign key(title_quiz) references quiz(title)
 );
 
+create table answer(
+	id int primary key auto_increment,
+    nick varchar(30),
+    title_quiz varchar(30),
+    score int(3),
+    foreign key(nick) references user(nick),
+    foreign key(title_quiz) references quiz(title)
+);
+
 alter table question add column right_letter char not null;
 
 
