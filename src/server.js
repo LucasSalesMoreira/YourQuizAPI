@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 const bodyParser = require('body-parser');
 const quizRoutes = require('./routes/quiz');
-const userRoutes = require('./routes/user'); 
+const userRoutes = require('./routes/user');
 
+app.use(express.static(path.join(__dirname, 'public/tests/')));
 app.use(bodyParser.json());
 app.use(bodyParser.raw());
 app.use(bodyParser.urlencoded({ extended: true }));
