@@ -30,8 +30,8 @@ module.exports = class CreateRegister {
                 sqlQuestion += `('${title}', '${questions[i].ask}', '${questions[i].a}', '${questions[i].b}', '${questions[i].c}', '${questions[i].right}'), `;
         }
         
-        console.log(`1º sql -> ${sqlQuiz}`);
-        console.log(`2º sql -> ${sqlQuestion}`);
+        console.log(`1º sql (sqlQuiz) -> ${sqlQuiz}`);
+        console.log(`2º sql (sqlQuestion) -> ${sqlQuestion}`);
 
         try {
             await this.conn.execute(sqlQuiz);
