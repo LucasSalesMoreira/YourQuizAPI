@@ -21,16 +21,15 @@ router.get('/view/:title', async (req, res) => {
         res.json({ ok: false });
 });
 
-// PENDENTE
+// OK
 router.post('/new_quiz/', async (req, res) => {
-    const quiz  = req.body.quiz;
+    const quiz  = req.body;
     console.log("JSON recebido:");
     console.log(quiz);
     
 /*
-*  JSON Object esperado:
-{
-    "quiz": {
+*   JSON Object esperado:
+    {
         "author": "xxxxxx",
         "title": "xxxxxxx",
         "questions": [
@@ -57,9 +56,8 @@ router.post('/new_quiz/', async (req, res) => {
             }
         ]
     }
-} 
 */
-
+    
     const CreateRegister = require(path.resolve('src/controller/logic/CreateRegister.js'));
     const result = await new CreateRegister().createQuiz(quiz);
     
