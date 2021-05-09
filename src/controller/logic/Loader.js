@@ -19,7 +19,7 @@ module.exports = class Loader {
 
     async loadQuiz(title) {
         try {
-            const result = await this.conn.search(`select title_quiz, ask, a, b, c from question where title_quiz = '${title}'`);
+            const result = await this.conn.search(`select id, title_quiz, ask, a, b, c from question where title_quiz = '${title}'`);
             if (result[0])
                 return result;
             else
