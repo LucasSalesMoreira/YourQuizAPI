@@ -41,4 +41,4 @@ function requestToNewQuiz() {
     });
 }
 
-requestToNewQuiz();
+//requestToNewQuiz();

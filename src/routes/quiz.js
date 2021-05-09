@@ -67,7 +67,7 @@ router.post('/new_quiz/', async (req, res) => {
         res.json({ ok: false });
 });
 
-router.post('/response_quiz', async () => {
+router.post('/response_quiz', async (req, res) => {
     /*
     *   JSON Object esperado:
         {
