@@ -6,7 +6,7 @@ router.get('/', async (req, res) => {
     const Loader = require(path.resolve('src/controller/logic/Loader.js'));
     const data = await new Loader().loadAllQuiz();
     if (data)   
-        res.json({ quizzes: data });
+        res.json({ ok: true, quizzes: data });
     else
         res.json({ ok: false });
 });
@@ -16,7 +16,7 @@ router.get('/view/:title', async (req, res) => {
     const Loader = require(path.resolve('src/controller/logic/Loader.js'));
     const data = await new Loader().loadQuiz(req.params.title);
     if (data)
-        res.json({ questions: data });
+        res.json({ ok: true, questions: data });
     else
         res.json({ ok: false });
 });
