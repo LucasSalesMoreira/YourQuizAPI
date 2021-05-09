@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const path = require('path');
 
-// PENDENTE
+// OK
 router.get('/', async (req, res) => {
     res.json({connected: true});
 });
