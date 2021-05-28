@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const quizRoutes = require('./routes/quiz');
 const userRoutes = require('./routes/user');
 
-app.use(express.static(path.join(__dirname, 'public/tests/')));
+app.use(express.static(path.join(__dirname, 'public/template/')));
 app.use(bodyParser.json());
 app.use(bodyParser.raw());
 app.use(bodyParser.urlencoded({ extended: true }));

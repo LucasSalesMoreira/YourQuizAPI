@@ -28,7 +28,4 @@ create table answer(
 );
 
 alter table question add column right_letter char not null;
-
-
-
-
+ALTER TABLE quiz ADD COLUMN description VARCHAR(200);
