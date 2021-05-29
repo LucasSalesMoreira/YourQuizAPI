@@ -1,25 +1,47 @@
 $(document).ready(() => {
     function setCards(quizzes) {
         quizzes.forEach(object => {
-            console.log(object);
             // Montar o card
             let title = object.title;
             let author = object.author;
             let description = object.description;
+            let img_url = object.img_url;
 
             let $baseDiv = $('<div>', {
                 class: 'm-lg-4',
-                html: [
-                    $('<div style="width: 18rem;">', {
-                        class: 'card',
-                        html: [
-                            
+                html: $('<div>', {
+                    class: 'card',
+                    style: 'width: 18rem;',    
+                    html: [
+                            $('<img>', {
+                                src: img_url,
+                                class: 'card-img-top' 
+                            }),
+                            $('<div>', {
+                                class: 'card-body',
+                                html: [
+                                    $('<h5>', {
+                                        class: 'card-title',
+                                        text: title
+                                    }),
+                                    $('<p>', {
+                                        class: 'card-text',
+                                        text: description
+                                    }),
+                                    $('<a>', {
+                                        href: '#',
+                                        class: 'btn btn-primary',
+                                        text: 'Responder quiz'
+                                    })
+                                ]
+                            })
                         ]
                     })
-                ]
-            });
+                });
+
+            
+            $('.row').append($baseDiv);
         });
-        // Setar o card
     }
 
     $.ajax({

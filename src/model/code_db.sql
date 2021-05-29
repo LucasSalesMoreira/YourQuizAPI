@@ -27,5 +27,6 @@ create table answer(
     foreign key(title_quiz) references quiz(title)
 );
 
-alter table question add column right_letter char not null;
+ALTER TABLE question ADD COLUMN right_letter CHAR NOT NULL;
 ALTER TABLE quiz ADD COLUMN description VARCHAR(200);
+ALTER TABLE quiz ADD COLUMN img_url VARCHAR(300) DEFAULT "https://cdn.wizard.com.br/wp-content/uploads/2017/07/02165739/quiz-palavras-em-ingles-plural-1.jpg";

@@ -1,7 +1,9 @@
-function requestToNewQuiz() {
+function requestToNewQuiz(num) {
     const quiz = {
         author: 'LucasSales',
-        title: 'XXXXXXX',
+        title: 'XXXXXXX_N_'+num,
+        description: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX_N_'+num,
+        img_url: 'https://upload.wikimedia.org/wikipedia/pt/8/80/Grand_Theft_Auto_V_capa.png',
         questions: [
             {
                 ask: 'XXXXXXXXXXXXXX',
@@ -41,4 +43,4 @@ function requestToNewQuiz() {
     });
 }
 
-//requestToNewQuiz();
+for (let i = 0; i < 1; i++) requestToNewQuiz(Math.floor(Math.random() * (i + 1000)));

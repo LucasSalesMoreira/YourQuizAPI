@@ -18,12 +18,19 @@ module.exports = class CreateRegister {
         const author = quizObject.author;
         const title = quizObject.title;
         const questions = quizObject.questions;
+        const description = quizObject.description;
+        const img_url = quizObject.img_url;
         
-        var sqlQuiz = `insert into quiz (author, title) values ('${author}', '${title}')`;
+        var sqlQuiz;
+        
+        if (img_url) 
+            sqlQuiz = `insert into quiz (author, title, description, img_url) values ('${author}', '${title}', '${description}', '${img_url}')`;
+        else 
+            sqlQuiz = `insert into quiz (author, title, description) values ('${author}', '${title}', '${description}')`;
+        
         var sqlQuestion = "insert into question (title_quiz, ask, a, b, c, right_letter) values "; 
-        var i = 0;
         
-        for (; i < questions.length; i++) {
+        for (var i = 0; i < questions.length; i++) {
             if (i === questions.length - 1)
                 sqlQuestion += `('${title}', '${questions[i].ask}', '${questions[i].a}', '${questions[i].b}', '${questions[i].c}', '${questions[i].right}')`;
             else 
