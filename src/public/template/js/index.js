@@ -1,4 +1,38 @@
 $(document).ready(() => {
+    function setQuestions(data) {
+        let questions = data.questions;
+        document.getElementById('respModalLabel').innerHTML = questions[0].title_quiz;
+        $modalBody = $('#modal-body');
+
+        questions.forEach(element => {
+            console.log(element);
+            let id = element.id;
+            let title = element.title;
+            let a = element.a;
+            let b = element.b;
+            let c = element.c;
+            let ask = element.ask;
+            $modalBody.append($('<p>', { html: ask }));
+        });
+    }
+
+    function addEventClick() {
+        // Load quiz
+        $('.btn-start').click(function() {
+            $.ajax({
+                url: $(this).val(),
+                method: 'GET',
+                dataType: 'json',
+                success: function(data) {
+                    setQuestions(data);
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        });
+    }
+
     function setCards(quizzes) {
         quizzes.forEach(object => {
             // Montar o card
@@ -28,9 +62,12 @@ $(document).ready(() => {
                                         class: 'card-text',
                                         text: description
                                     }),
-                                    $('<a>', {
-                                        href: '#',
-                                        class: 'btn btn-primary',
+                                    $('<button>', {
+                                        type: 'button',
+                                        value: `/quiz/view/${title}`,
+                                        class: 'btn btn-primary btn-start',
+                                        'data-toggle': 'modal',
+                                        'data-target': '#respModal',
                                         text: 'Responder quiz'
                                     })
                                 ]
@@ -42,6 +79,8 @@ $(document).ready(() => {
             
             $('.row').append($baseDiv);
         });
+
+        addEventClick();
     }
 
     $.ajax({
