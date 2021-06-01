@@ -3,7 +3,7 @@ function requestToNewQuiz(num) {
         author: 'LucasSales',
         title: 'XXXXXXX_N_'+num,
         description: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX_N_'+num,
-        img_url: 'https://upload.wikimedia.org/wikipedia/pt/8/80/Grand_Theft_Auto_V_capa.png',
+        img_url: 'https://i.pinimg.com/originals/9a/ba/d9/9abad992d0fb8d55cb707396c13100f1.png',
         questions: [
             {
                 ask: 'XXXXXXXXXXXXXX',
@@ -43,4 +43,4 @@ function requestToNewQuiz(num) {
     });
 }
 
-for (let i = 0; i < 1; i++) requestToNewQuiz(Math.floor(Math.random() * (i + 1000)));
+//for (let i = 0; i < 1; i++) requestToNewQuiz(Math.floor(Math.random() * (i + 1000)));

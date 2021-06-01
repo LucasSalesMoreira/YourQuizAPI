@@ -55,9 +55,9 @@ router.post('/new_quiz/', async (req, res) => {
     */
 
     const quiz  = req.body;
-    console.log("JSON recebido:");
-    console.log(quiz);
-    
+    //console.log("JSON recebido:");
+    //console.log(quiz);
+    console.log(path.resolve('src/controller/logic/CreateRegister.js'));
     const CreateRegister = require(path.resolve('src/controller/logic/CreateRegister.js'));
     const result = await new CreateRegister().createQuiz(quiz);
     

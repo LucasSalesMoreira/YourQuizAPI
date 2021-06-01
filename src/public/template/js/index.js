@@ -49,6 +49,7 @@ $(document).ready(() => {
                     html: [
                             $('<img>', {
                                 src: img_url,
+                                style: 'height: 18rem',
                                 class: 'card-img-top' 
                             }),
                             $('<div>', {
