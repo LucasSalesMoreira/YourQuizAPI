@@ -18,7 +18,7 @@ $(document).ready(() => {
 
     function addEventClick() {
         // Load quiz
-        $('.btn-start').click(function() {
+        $('.btn-start').click(() => {
             $.ajax({
                 url: $(this).val(),
                 method: 'GET',
@@ -49,7 +49,7 @@ $(document).ready(() => {
                     html: [
                             $('<img>', {
                                 src: img_url,
-                                style: 'height: 18rem',
+                                style: 'height: 18rem;',
                                 class: 'card-img-top' 
                             }),
                             $('<div>', {
@@ -77,7 +77,6 @@ $(document).ready(() => {
                     })
                 });
 
-            
             $('.row').append($baseDiv);
         });
 
@@ -95,5 +94,10 @@ $(document).ready(() => {
         error: function(error) {
             console.log(error);
         }
+    });
+
+    $('#bt-load-img').click(() => {
+        $imgArray = $('#img_url');
+        $imgArray[0].src = $('#input_img_url').val();
     });
 });

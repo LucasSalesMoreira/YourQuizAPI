@@ -142,7 +142,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="newQuizModalLabel">Monte seu quiz!</h5>
+          <h5 class="modal-title" id="newQuizModalLabel" style="color: #191622;">Monte seu quiz!</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -151,35 +151,65 @@
 
           <div class="mb-3">
             <label for="title" class="form-label">Título</label>
-            <input type="text" class="form-control" id="title" placeholder="Ex:(My title)">
+            <input type="text" class="form-control" id="title" placeholder="Ex:(My title)"/>
           </div>
 
           <div class="mb-3">
-            <label for="ask" class="form-label">Pergunta</label>
-            <textarea class="form-control" id="ask" rows="3"></textarea>
+            <label for="input_img_url" class="form-label">URL de uma imagem</label>
+            <input type="text" class="form-control" id="input_img_url" placeholder="https://i.pinimg.com/originals/9a/ba/d9/9abad992d0fb8d55cb707396c13100f1.png"/>
+            <button id="bt-load-img" type="button" class="btn btn-primary mt-2">
+              <!-- Icon de load -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+                <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+              </svg>
+              Carregar
+            </button>
+          </div>
+
+          <div class="mb-3">
+            <img class="card-img-top" id="img_url" src="https://i2.wp.com/simplesvinho.com///wp-content/uploads/2017/05/Quiz-300x166.png?resize=634%2C351&ssl=1" style="height: 18rem;"/>
+            <p>(A imagem ficará com 18rem de altura).</p>
           </div>
 
           <div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="q1a">
-              <input type="text" class="form-control" id="a" placeholder="Alternativa">
+            <div class="mb-3">
+              <label for="ask" class="form-label">Pergunta</label>
+              <textarea class="form-control" id="ask" rows="3"></textarea>
             </div>
 
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="q1b">
-              <input type="text" class="form-control" id="b" placeholder="Alternativa">
-            </div>
+              <div class="form-check mt-2">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="q1a"/>
+                <input type="text" class="form-control" id="a" placeholder="Alternativa"/>
+              </div>
 
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="q1c" checked>
-              <input type="text" class="form-control" id="c" placeholder="Alternativa">
-            </div>
-          </div>
+              <div class="form-check mt-2">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="q1b"/>
+                <input type="text" class="form-control" id="b" placeholder="Alternativa"/>
+              </div>
 
+              <div class="form-check mt-2">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="q1c" checked/>
+                <input type="text" class="form-control" id="c" placeholder="Alternativa"/>
+              </div>
+            </div>
         </div>
+
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-primary">
+            <!-- Icon de + -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+              <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"/>
+            </svg>
+            Adicionar questão
+          </button>
+          <button type="button" class="btn btn-success">
+            <!-- Icon de ok -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+              <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+            </svg>
+            Salvar
+          </button>
         </div>
       </div>
     </div>
